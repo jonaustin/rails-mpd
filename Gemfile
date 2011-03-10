@@ -1,11 +1,23 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
+
+group :development, :test do
+  gem 'jquery-rails'
+  gem 'rspec-rails'
+  gem 'cucumber-rails' 
+  gem 'haml-rails'
+  gem 'compass'
+  gem 'annotate-models'
+  gem 'capybara'
+  #irb
+  gem 'awesome_print'
+  gem 'interactive_editor'
+  gem 'wirble'
+end
+
+#autotest-rails-pure
 
 # Use unicorn as the web server
 # gem 'unicorn'
