@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Nyx2::Application.config.secret_token = '437a10db0574b5a80d014df89a61433676f67d10d483689f1d5a2db6a950cad4122671b92a57f558699cd119a0999ae3edb604a037bc6f12fcf9c95ac2724085'
+Nyx2::Application.config.secret_token = '45d049277b149242f7adef67ce45fe6ebd7d2854356efb786a080f31a26f7c46503ccbd1153b3ef74fc30d5ef8859d131c2b221b66cd72f207bf04b01270d172'
