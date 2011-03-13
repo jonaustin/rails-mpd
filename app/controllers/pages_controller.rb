@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  include MPDAbstract
+  include PlayerBackendAbstract
 
   def home
   end
