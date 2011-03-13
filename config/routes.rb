@@ -1,4 +1,7 @@
-Nyx2::Application.routes.draw do
+Stratum::Application.routes.draw do
+  get "pages/home", :as => 'home'
+  root :to => "pages#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
