@@ -11,13 +11,16 @@ group :development, :test do
   gem 'compass'
   gem 'annotate-models'
   gem 'capybara'
+  gem 'spork', '>= 0.9.0.rc3'
+  gem 'watchr'
   #irb
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'wirble'
 end
 
-#autotest-rails-pure
+#gem 'autotest-rails-pure' -- make sure to add autotest:/autotest-all: to cucumber.yml (and just copy options from default profile)
+#gem 'factory_girl_rails' -- see bottom post https://github.com/timcharper/spork/issues/83
 
 # Use unicorn as the web server
 # gem 'unicorn'
