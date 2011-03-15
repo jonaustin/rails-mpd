@@ -11,4 +11,3 @@ MPD_PORT      = 6600
 
 # Initialize the rails application
 Stratum::Application.initialize!
-
