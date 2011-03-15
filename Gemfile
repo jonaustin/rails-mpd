@@ -4,16 +4,25 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 
 group :development, :test do
+  gem 'annotate-models'
+  gem 'librmpd'
+
   gem 'jquery-rails'
-  gem 'rspec-rails'
-  gem 'cucumber-rails' 
   gem 'haml-rails'
   gem 'compass'
-  gem 'annotate-models'
+
+  gem 'rspec-rails'
+  gem 'cucumber-rails' 
   gem 'capybara'
   gem 'spork', '>= 0.9.0.rc3'
-  gem 'watchr'
-  gem 'librmpd'
+
+  gem 'guard'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'guard-compass'
+
+  gem 'rb-inotify', '>= 0.5.1'
+  gem 'libnotify'
   #irb
   gem 'awesome_print'
   gem 'interactive_editor'
@@ -22,8 +31,9 @@ end
 
 #gem 'autotest-rails-pure' -- make sure to add autotest:/autotest-all: to cucumber.yml (and just copy options from default profile)
 #gem 'factory_girl_rails' -- see bottom post https://github.com/timcharper/spork/issues/83
-#gem 'shoulda'
+#gem 'shoulda' (or 'remarkable')
 #gem 'rockstar'
+#gem 'guard-spork' #must be before cuc/rspec guard gems
 
 # Use unicorn as the web server
 # gem 'unicorn'
