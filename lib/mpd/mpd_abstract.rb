@@ -7,8 +7,8 @@ module MPDAbstract
   end
 
 
-  def self.play
-    @mpd.play params['pos']
+  def self.play(pos)
+    @mpd.play(post)
   end
 
 
@@ -39,19 +39,36 @@ module MPDAbstract
     @mpd.repeat = (@mpd.repeat? ? false : true)
   end
 
-  ### Playlist Actions
-  def self.move_up
-    pos = params['pos'].to_i
+  def self.playlist_move_up(pos)
     @mpd.move pos, pos-1
   end
 
-  def self.move_down
-    pos = params['pos'].to_i
+  def self.playlist_move_down(pos)
     @mpd.move pos, pos+1
   end
 
-  def self.remove
-    pos = params['pos'].to_i
+  def self.playlist_remove(pos)
     @mpd.delete pos
+  end
+
+  ### State
+  def cur_track
+    @mpd.current_song
+  end
+
+  def cur_playlist
+    @mpd.playlist
+  end
+
+  def playing?
+    @mpd.playing?
+  end
+
+  def stopped?
+    @mpd.stopped
+  end
+
+  def repeat?
+    @mpd.repeat?
   end
 end
