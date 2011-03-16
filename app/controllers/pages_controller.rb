@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
-  include PlayerBackendAbstract
-
   def home
-    MPDAbstract.pause_play
+    @player.pause_play
   end
-
 end
