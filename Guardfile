@@ -1,4 +1,5 @@
-guard 'rspec' do
+#guard 'rspec', :cli => '-r rspec/instafail -f RSpec::Instafail --color --format doc' do # instafail just isn't working for some unknown reason
+guard 'rspec', :cli => '--color --format doc' do
   watch(%r{^spec/.+_spec\.rb})
   watch(%r{^lib/(.+)\.rb})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb') { "spec" }

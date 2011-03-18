@@ -34,6 +34,7 @@ end
 #gem 'shoulda' (or 'remarkable')
 #gem 'rockstar'
 #gem 'guard-spork' #must be before cuc/rspec guard gems
+#gem 'rspec-instafail' # use with --fail-fast -- note: for some utterly strange reason rails can't see this (i.e. in plain irb 'require "rspec/instafail" returns true, while in rails console, returns nil, and when used with rspec it causes a stacktrace.. (and note that according to the docs, No require is used in this gemfile, rspec handles that...but rspec can't find it either..
 
 # Use unicorn as the web server
 # gem 'unicorn'
