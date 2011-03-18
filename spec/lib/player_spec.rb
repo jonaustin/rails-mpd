@@ -33,21 +33,26 @@ describe Player do
         @player.paused?.should be_true
       end
 
-      it "should go to previous track when receiving previous() message" do
-        # refactor..
-        start_pos = 1
-        @player.play(start_pos)
-        @player.playing?.should be_true
-        pos = @player.playlist_pos
-        pos.should eq(1) # test position after playing at specific pos
-        @player.previous
-        pos = @player.playlist_pos
-        pos.should eq(start_pos-1) # test position after switching to previous
-      end
+      context "for next and previous" do
+        before(:each) do
+          @start_pos = 1
+          @player.play(@start_pos)
+          @player.playing?.should be_true
+          pos = @player.playlist_pos
+          pos.should eq(1) # test position after playing at specific pos
+        end
 
-      it "self.next" do
-        pending
-        @player.next
+        it "should go to previous track when receiving previous() message" do
+          @player.previous
+          pos = @player.playlist_pos
+          pos.should eq(@start_pos-1) # test position after switching to previous
+        end
+
+        it "self.next" do
+          @player.next
+          pos = @player.playlist_pos
+          pos.should eq(@start_pos+1) # test position after switching to previous
+        end
       end
 
       it "self.stop" do
