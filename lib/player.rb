@@ -7,7 +7,7 @@ module Player
       @mpd = MPD.new MPD_HOST, MPD_PORT unless @mpd
     end
 
-    def start
+    def connect
       unless @mpd.connected?
         @mpd.disconnect
         @mpd.connect( true ) 
@@ -20,27 +20,32 @@ module Player
 
 
     def play(pos)
-      self.start
-      @mpd.play(post)
+      self.connect
+      @mpd.play(pos)
       self.disconnect
     end
 
 
     def previous
-      self.start
+      self.connect
       @mpd.previous
       self.disconnect
     end
 
     def next
-      self.start
+      self.connect
       @mpd.next
       self.disconnect
     end
 
+    def pause
+      self.connect
+      @mpd.pause = true
+      self.disconnect
+    end
 
     def pause_play
-      self.start
+      self.connect
       if @mpd.stopped?
         @mpd.play 0
       else
@@ -49,67 +54,94 @@ module Player
       self.disconnect
     end
 
-
     def stop
-      self.start
+      self.connect
       @mpd.stop
       self.disconnect
     end
 
 
     def repeat
-      self.start
+      self.connect
       @mpd.repeat = (@mpd.repeat? ? false : true)
       self.disconnect
     end
 
+    ### Playlist
     def playlist_move_up(pos)
-      self.start
+      self.connect
       @mpd.move pos, pos-1
       self.disconnect
     end
 
     def playlist_move_down(pos)
-      self.start
+      self.connect
       @mpd.move pos, pos+1
       self.disconnect
     end
 
     def playlist_remove(pos)
-      self.start
+      self.connect
       @mpd.delete pos
       self.disconnect
     end
 
     ### State
-    def cur_track
-      self.start
-      @mpd.current_song
+    ## Playlist
+    def cur_playlist
+      self.connect
+      playlist = @mpd.playlist
       self.disconnect
+      playlist
     end
 
-    def cur_playlist
-      self.start
-      @mpd.playlist
+    def playlist_pos
+      self.connect
+      pos = @mpd.status['song'].to_i
       self.disconnect
+      pos
+    end
+
+    ## Song
+    def cur_song_title
+      self.connect
+      cur_song_title = @mpd.current_song
+      self.disconnect
+      cur_song_title
+    end
+
+
+    ### Play state
+    def connected?
+      @mpd.connected?
     end
 
     def playing?
-      self.start
-      @mpd.playing?
+      self.connect
+      is_playing = @mpd.playing?
       self.disconnect
+      is_playing
+    end
+
+    def paused?
+      self.connect
+      is_paused = @mpd.paused?
+      self.disconnect
+      is_paused
     end
 
     def stopped?
-      self.start
-      @mpd.stopped
+      self.connect
+      is_stopped = @mpd.stopped?
       self.disconnect
+      is_stopped
     end
 
     def repeat?
-      self.start
-      @mpd.repeat?
+      self.connect
+      is_repeat = @mpd.repeat?
       self.disconnect
+      is_repeat
     end
   end
 end
