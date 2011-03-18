@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Player do
-  context "MPD Player" do
-    describe "modify play state" do
+  context "MPD" do
+    describe "when modifying the play state" do
       before(:all) do
         require 'net/telnet'
       end
