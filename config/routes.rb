@@ -1,5 +1,6 @@
 Stratum::Application.routes.draw do
   get "playlists/current", :as => 'current_playlist'
+  match "/current", :to => "playlists#current"
 
   get "pages/home", :as => 'home'
   root :to => "pages#home"
