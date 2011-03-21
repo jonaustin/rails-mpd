@@ -5,6 +5,38 @@ Feature: Current Playlist
 
   Background:
     Given I am on the current playlist page
+    And There are at least 5 tracks
+    And I should see the Track Number in the Album Track column
+    And I should see the Song name in the Song column
+    And I should see the Album name in the Album column
+    And I should see the Artist name in the Artist column
+    And I should see the song Duration in the Duration column
+    And No song is currently playing
+    # Put into Controls feature
+    And The controls set exists on the page
 
-  Scenario: Current playlist should show queued tracks
-    Then The list of tracks in the current playlist section should be accurate
+
+  Scenario: Playing a track
+    When I start playing a song
+    Then the controls should reflect that a song is currently playing
+    And I should be able to view info for current song
+    #And The current song name's 
+    
+  # Put into Controls feature
+  #Scenario: Play button
+  #  When I click the play button
+  #  Then It should play
+
+  #Scenario: Stop button
+  #  When I click the stop button
+  #  Then It should stop
+
+  #Scenario: Previous button
+  #  When I click the previous button
+  #  Then It should go to the previous track
+
+  #Scenario: next button When I click the next button
+  #  Then It should go to the next track
+
+  ##play/pause
+  ##repeat

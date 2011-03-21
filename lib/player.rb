@@ -94,6 +94,9 @@ module Player
       self.disconnect
       playlist
     end
+    def playlist
+      self.cur_playlist
+    end
 
     def playlist_pos
       self.connect
@@ -103,11 +106,11 @@ module Player
     end
 
     ## Song
-    def cur_song_title
+    def cur_song
       self.connect
-      cur_song_title = @mpd.current_song
+      cur_song = @mpd.current_song
       self.disconnect
-      cur_song_title
+      cur_song
     end
 
 

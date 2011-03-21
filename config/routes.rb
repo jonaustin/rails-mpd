@@ -1,9 +1,20 @@
 Stratum::Application.routes.draw do
   get "playlists/current", :as => 'current_playlist'
-  match "/current", :to => "playlists#current"
+  match "/current",        :to => "playlists#current"
 
-  get "pages/home", :as => 'home'
-  root :to => "pages#home"
+  get "pages/home",        :as => 'home'
+  root                     :to => "pages#home"
+
+  # controls
+  match "/play",       :to => "playlists#play"
+  match "/stop",       :to => "playlists#stop"
+  match "/pause_play", :to => "playlists#pause_play"
+  match "/previous",   :to => "playlists#previous"
+  match "/next",       :to => "playlists#next"
+  match "/repeat",     :to => "playlists#repeat"
+  match "/move_up",    :to => "playlists#move_up"
+  match "/move_down",  :to => "playlists#move_down"
+  match "/remove",     :to => "playlists#remove"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
