@@ -8,10 +8,11 @@
   - else
     %img{:alt => "Previous", :height => "16", :src => "/images/control_start.png", :width => "16"}/
   / Play/Pause Button
-  %a#pause_play{:href => "/pause_play"}
-    - if playing
+  - if playing
+    %a#pause{:href => "/pause_play"}
       %img{:alt => "Pause", :height => "16", :src => "/images/control_pause_blue.png", :width => "16"}/
-    - else
+  - else
+    %a#play{:href => "/pause_play"}
       %img{:alt => "Play", :height => "16", :src => "/images/control_play_blue.png", :width => "16"}/
   / Stop Button
   - if stopped
