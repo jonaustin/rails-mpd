@@ -5,7 +5,7 @@
 %h3#current_info_header Currently Playing
 %ul#current_info
   - @player.cur_song.each do |k,v|
-    %li
+    %li{:id => 'current_'+k}
       = k + " = " + v
 
 = render(:partial => '_partials/controls', |
@@ -38,7 +38,9 @@
       %td.song_name
         - if song['pos'] == @player.cur_song['pos']
           %a{:name => 'current', :id => 'current'}
-        = link_to song.title, play_path(:pos => song['pos']), :id => 'cur_playlist_track__'+song['pos'], :class => 'song_name'
+            %span#playlist_cur_song_name #{song.title}
+        - else
+          = link_to song.title, play_path(:pos => song['pos']), :id => 'cur_playlist_track__'+song['pos'], :class => 'song_name'
       %td.album_name= song.album
       %td.artist_name= song.artist
       %td.duration= song.time
