@@ -12,7 +12,8 @@ group :development, :test do
   gem 'compass'
 
   gem 'rspec-rails'
-  gem 'cucumber-rails' 
+  gem 'cucumber-rails'#, :git => 'git://github.com/aslakhellesoy/cucumber-rails.git'
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'spork', '>= 0.9.0.rc3'
 
