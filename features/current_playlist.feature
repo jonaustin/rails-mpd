@@ -12,19 +12,20 @@ Feature: Current Playlist
     And I should see the Artist name in the Artist column
     And I should see the song Duration in the Duration column
     And No song is currently playing
-    # Put into Controls feature
+    # Put into Controls feature?
     And The controls set exists on the page
 
 
-  Scenario: Playing a track
+  Scenario: Playing a song
     When I start playing a song
-    Then the controls should reflect that a song is currently playing
+    Then The controls should reflect the playing state
     And I should be able to view info for current song
-    #And The current song name's 
+    And The currently playing song's name should not be a link
+    And The currently playing song's name in the playlist should match that in the Current Song Info
     
-  # Put into Controls feature
-  #Scenario: Play button
-  #  When I click the play button
+  # Controls
+  Scenario: Play button
+    When I click the play button
   #  Then It should play
 
   #Scenario: Stop button
