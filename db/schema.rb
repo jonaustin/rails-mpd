@@ -10,6 +10,53 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110521204334) do
+
+  create_table "albums", :force => true do |t|
+    t.integer  "artist_id"
+    t.string   "name"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "id3_id"
+  end
+
+  create_table "playlists", :force => true do |t|
+    t.string   "name"
+    t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scrobbles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "track_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.string   "name"
+    t.integer  "artist_id"
+    t.integer  "genre_id"
+    t.integer  "album_id"
+    t.integer  "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "number"
+    t.string   "filename"
+  end
 
 end
