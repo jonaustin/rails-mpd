@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'mysql'
+gem 'rake', '~> 0.8.7' # 0.9.0 is broken..
 
 group :development, :test do
   gem 'annotate-models'
