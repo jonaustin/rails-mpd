@@ -4,9 +4,12 @@
 
 %h3#current_info_header Currently Playing
 %ul#current_info
-  - @player.cur_song.each do |k,v|
-    %li{:id => 'current_'+k}
-      = k + " = " + v
+  = render(:partial => '_partials/songinfo', |
+    :locals => { :cur_song => @player.cur_song |
+    }) |
+
+=yield
+/ must yield between partials?
 
 = render(:partial => '_partials/controls', |
   :locals => { :cur_song  => @player.cur_song,  |
@@ -40,7 +43,7 @@
           %a{:name => 'current', :id => 'current'}
             %span#playlist_cur_song_name #{song.title}
         - else
-          = link_to song.title, play_path(:pos => song['pos']), :id => 'cur_playlist_track__'+song['pos'], :class => 'song_name'
+          = link_to song.title, play_path(:pos => song['pos']), :id => 'cur_playlist_track__'+song['pos'], :class => 'song_name controls', :remote => true
       %td.album_name= song.album
       %td.artist_name= song.artist
       %td.duration= song.time

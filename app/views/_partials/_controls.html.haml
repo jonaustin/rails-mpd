@@ -3,31 +3,31 @@
   %h2 Controls
   / Previous Button
   - if cur_song['pos'].to_i > 0
-    %a#previous{:href => "/previous"}
+    %a#previous.controls{:href => "/previous", :data => {remote: 'true'}}
       %img{:alt => "Previous", :height => "16", :src => "/images/control_start_blue.png", :width => "16"}/
   - else
     %img{:alt => "Previous", :height => "16", :src => "/images/control_start.png", :width => "16"}/
   / Play/Pause Button
   - if playing
-    %a#pause{:href => "/pause_play"}
+    %a#pause.controls{:href => "/pause_play", :data => {remote: 'true'}}
       %img{:alt => "Pause", :height => "16", :src => "/images/control_pause_blue.png", :width => "16"}/
   - else
-    %a#play{:href => "/pause_play"}
+    %a#play.controls{:href => "/pause_play", :data => {remote: 'true'}}
       %img{:alt => "Play", :height => "16", :src => "/images/control_play_blue.png", :width => "16"}/
   / Stop Button
   - if stopped
     %img{:alt => "Stopped", :height => "16", :src => "/images/control_stop.png", :width => "16"}/
   - else
-    %a#stop{:href => "/stop"}
+    %a#stop.controls{:href => "/stop", :data => {remote: 'true'}}
       %img{:alt => "Stop", :height => "16", :src => "/images/control_stop_blue.png", :width => "16"}/
   / Next Button
   - if cur_song['pos'].to_i < (playlist.length - 1)
-    %a#next{:href => "/next"}
+    %a#next.controls{:href => "/next", :data => {remote: 'true'}}
       %img{:alt => "Next", :height => "16", :src => "/images/control_end_blue.png", :width => "16"}/
   - else
     %img{:alt => "Next", :height => "16", :src => "/images/control_end.png", :width => "16"}/
   / Loop Button
-  %a#repeat{:href => "/repeat"}
+  %a#repeat.controls{:href => "/repeat", :data => {remote: 'true'}}
     - if repeat
       %img{:alt => "Loop on", :height => "16", :src => "/images/control_repeat_blue.png", :width => "16"}/
     - else

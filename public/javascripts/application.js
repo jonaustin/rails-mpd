@@ -1,7 +1,7 @@
 $(function() {
   
-  $("a#previous").click(function() { 
-    $.get('/previous');
+  $('.controls').bind("ajax:success", function(evt, data, status, xhr){
+      $('ul#current_info').html(xhr.responseText);
   });
-
+  
 });

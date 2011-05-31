@@ -6,30 +6,70 @@ class PlaylistsController < ApplicationController
 
   def play
     @player.play params['pos']
-    redirect_to :action => 'current'
+    respond_to do |format|
+      format.html do 
+        if request.xhr?
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+        else
+          redirect_to :action => 'current' 
+        end
+      end
+    end
   end
 
 
   def previous
     @player.previous
-    redirect_to :action => 'current'
+    respond_to do |format|
+      format.html do 
+        if request.xhr?
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+        else
+          redirect_to :action => 'current' 
+        end
+      end
+    end
   end
 
   def next
     @player.next
-    redirect_to :action => 'current'
+    respond_to do |format|
+      format.html do 
+        if request.xhr?
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+        else
+          redirect_to :action => 'current' 
+        end
+      end
+    end
   end
 
 
   def pause_play
     @player.pause_play
-    redirect_to :action => 'current'
+    respond_to do |format|
+      format.html do 
+        if request.xhr?
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+        else
+          redirect_to :action => 'current' 
+        end
+      end
+    end
   end
 
 
   def stop
     @player.stop
-    redirect_to :action => 'current'
+    respond_to do |format|
+      format.html do 
+        if request.xhr?
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+        else
+          redirect_to :action => 'current' 
+        end
+      end
+    end
   end
 
 
