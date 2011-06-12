@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TrackController do
+describe TracksController do
 
   describe "GET 'sync_mpd'" do
     it "should be successful" do
