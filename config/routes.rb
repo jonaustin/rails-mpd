@@ -1,11 +1,12 @@
 Stratum::Application.routes.draw do
-  get "track/sync_mpd"
-
   get '/playlists/current', :as => 'current_playlist'
   match '/current',        :to => 'playlists#current'
 
   get 'pages/home',        :as => 'home'
   root                     :to => 'pages#home'
+
+  # syncing
+  match '/sync_mpd',   :to => 'tracks#sync_mpd'
 
   # controls
   match '/play',       :to => 'player#play'
