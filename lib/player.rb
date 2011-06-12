@@ -7,10 +7,14 @@ module Player
       @mpd = MPD.new MPD_HOST, MPD_PORT unless @mpd
     end
 
+    def mpd
+      @mpd
+    end
+
     def connect
       unless @mpd.connected?
         @mpd.disconnect
-        @mpd.connect( true ) 
+        @mpd.connect( true )
       end
     end
 
