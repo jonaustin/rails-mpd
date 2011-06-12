@@ -18,6 +18,8 @@ group :development, :test do
   gem 'capybara'
   gem 'spork', '>= 0.9.0.rc3'
 
+  gem 'ruby-debug19', :require => 'ruby-debug'
+
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-rspec'
@@ -31,6 +33,9 @@ group :development, :test do
   gem 'wirble'
 end
 
+#gem 'cancan' #authorization
+#gem 'kaminari' #pagination
+#gem 'simple_form'
 #gem 'autotest-rails-pure' -- make sure to add autotest:/autotest-all: to cucumber.yml (and just copy options from default profile)
 #gem 'factory_girl_rails' -- see bottom post https://github.com/timcharper/spork/issues/83
 #gem 'shoulda' (or 'remarkable')
@@ -38,15 +43,6 @@ end
 #gem 'guard-spork' #must be before cuc/rspec guard gems
 #gem 'rspec-instafail' # use with --fail-fast -- note: for some utterly strange reason rails can't see this (i.e. in plain irb 'require "rspec/instafail" returns true, while in rails console, returns nil, and when used with rspec it causes a stacktrace.. (and note that according to the docs, No require is used in this gemfile, rspec handles that...but rspec can't find it either..
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Bundle the extra gems:
 # gem 'bj'
