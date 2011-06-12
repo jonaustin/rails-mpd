@@ -4,7 +4,7 @@ class PlayerController < ApplicationController
     respond_to do |format|
       format.html do
         if request.xhr?
-          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => 200
         else
           redirect_to  '/current'
         end
@@ -18,7 +18,7 @@ class PlayerController < ApplicationController
     respond_to do |format|
       format.html do
         if request.xhr?
-          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => 200
         else
           redirect_to  '/current'
         end
@@ -31,7 +31,7 @@ class PlayerController < ApplicationController
     respond_to do |format|
       format.html do
         if request.xhr?
-          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => 200
         else
           redirect_to  '/current'
         end
@@ -45,7 +45,7 @@ class PlayerController < ApplicationController
     respond_to do |format|
       format.html do
         if request.xhr?
-          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => 200
         else
           redirect_to  '/current'
         end
@@ -59,7 +59,7 @@ class PlayerController < ApplicationController
     respond_to do |format|
       format.html do
         if request.xhr?
-          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => :created
+          render :partial => "_partials/songinfo", :locals => { :cur_song => @player.cur_song }, :layout => false, :status => 200
         else
           redirect_to  '/current'
         end
