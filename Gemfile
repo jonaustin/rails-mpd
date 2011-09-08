@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.1.0'
 gem 'mysql'
-gem 'rake', '~> 0.8.7' # 0.9.0 is broken..
+gem 'rake', '0.9.0' # 0.9.0 is broken..
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'annotate-models'
@@ -17,6 +18,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'spork', '>= 0.9.0.rc3'
+  gem 'simplecov'
 
   gem 'ruby-debug19', :require => 'ruby-debug'
 
@@ -32,6 +34,15 @@ group :development, :test do
   gem 'interactive_editor'
   gem 'wirble'
 end
+
+# Gems used only for assets and not required
+# # in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 
 #gem 'cancan' #authorization
 #gem 'kaminari' #pagination
