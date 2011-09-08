@@ -4,9 +4,12 @@ class TracksController < ApplicationController
     mpd.connect
     tracks = mpd.songs
     tracks.each do |t|
+      next if t.nil?
+      logger.info t.attributes.to_s
       artist = Artist.find_or_create_by_name(t.artist)
       album  = Album.find_or_create_by_name(t.album) #FIXME: find by album/artist
-      Track.create(:name => t.title, :number => t.track.split('/')[0], :duration => t.time, :filename => t.file)
+      number = t.track.split('/')[0] unless t.track.nil?
+      Track.create(:name => t.title, :number => number, :duration => t.time, :filename => t.file, :artist_id => artist.id, :album_id => album.id)
     end
     message = "MPD synced:  #{Track.count} tracks"
 
