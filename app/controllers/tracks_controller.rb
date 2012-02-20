@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   def sync_mpd
+    #FIXME: remove tracks that no longer exist in mpd
     mpd = @player.mpd
     mpd.connect
     tracks = mpd.songs
