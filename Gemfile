@@ -1,12 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.3'
 gem 'mysql'
 gem 'rake', '0.9.0' # 0.9.0 is broken..
 gem 'jquery-rails'
+gem  'metrical'
 
 group :development, :test do
-  gem 'annotate-models'
+  gem 'annotate'
   gem 'librmpd'
 
   gem 'jquery-rails'
