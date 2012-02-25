@@ -2,9 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
 gem 'mysql'
-gem 'rake', '0.9.0' # 0.9.0 is broken..
+gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
-gem  'metrical'
+gem 'twitter-bootstrap-rails', '~> 2.0'
+gem 'simple_form'
 
 group :development, :test do
   gem 'annotate'
@@ -45,6 +46,7 @@ group :assets do
 end
 
 
+#gem  'metrical'
 #gem 'cancan' #authorization
 #gem 'kaminari' #pagination
 #gem 'simple_form'
