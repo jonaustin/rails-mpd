@@ -31,10 +31,11 @@ group :development, :test do
 
   gem 'rb-inotify', '>= 0.5.1'
   gem 'libnotify'
-  #irb
+  # console
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'wirble'
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required
