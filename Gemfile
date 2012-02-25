@@ -18,7 +18,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'spork', '>= 0.9.0.rc3'
+  gem 'spork-rails'
   gem 'simplecov'
 
   gem 'ruby-debug19', :require => 'ruby-debug'
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-rspec'
+  gem 'guard-spork'
 
   gem 'rb-inotify', '>= 0.5.1'
   gem 'libnotify'
