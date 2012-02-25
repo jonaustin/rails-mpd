@@ -13,7 +13,6 @@ group :development, :test do
 
   gem 'jquery-rails'
   gem 'haml-rails'
-  gem 'compass'
 
   gem 'rspec-rails'
   gem 'cucumber-rails'
@@ -27,7 +26,6 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-rspec'
-  gem 'guard-compass'
 
   gem 'rb-inotify', '>= 0.5.1'
   gem 'libnotify'
@@ -41,7 +39,6 @@ end
 # Gems used only for assets and not required
 # # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.2.3"
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
 end
