@@ -71,6 +71,5 @@ When /^I click the play button$/ do
   page.click_link('play')
 end
 
-Then /^It should play/ do
-  find('span#playlist_cur_song_name').text.should == cur_song_name
-end
+#Then /^It should play/ do
+#end
