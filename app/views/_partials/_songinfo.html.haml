@@ -1,3 +1,6 @@
-- cur_song.each do |k,v|
-  %li{:id => 'current_'+k}
-    = k + " = " + v
+%li{:id => 'current_title'}
+  = cur_song.title
+%li{:id => 'current_album'}
+  = cur_song.album
+%li{:id => 'current_artist'}
+  = cur_song.artist
