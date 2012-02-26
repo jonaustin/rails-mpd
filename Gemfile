@@ -35,6 +35,8 @@ group :development, :test do
   gem 'interactive_editor'
   gem 'wirble'
   gem 'pry-rails'
+
+  gem 'thin'
 end
 
 # Gems used only for assets and not required
