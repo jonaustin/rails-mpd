@@ -6,7 +6,7 @@ PLAYER_BACKEND = 'MPD'
 #MUSIC_DIR     = '/media/MORGOTH/musix'
 MUSIC_DIR     = '/home/jon/.mpd_local/music' # for testing
 PLAYLIST_DIR  = '/home/jon/.mpd_local/playlists'
-MPD_HOST      = 'localhost'
+MPD_HOST      = 'xs.homeunix.net'
 MPD_PORT      = 20000
 
 # Initialize the rails application
