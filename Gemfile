@@ -6,6 +6,7 @@ gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', '~> 2.0'
 gem 'simple_form'
+gem 'rockstar'
 
 group :development, :test do
   gem 'annotate'
@@ -21,7 +22,7 @@ group :development, :test do
   gem 'spork-rails'
   gem 'simplecov'
 
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'debugger'
 
   gem 'guard'
   gem 'guard-cucumber'
@@ -44,6 +45,7 @@ end
 group :assets do
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
+  gem 'node'
 end
 
 
@@ -54,7 +56,6 @@ end
 #gem 'autotest-rails-pure' -- make sure to add autotest:/autotest-all: to cucumber.yml (and just copy options from default profile)
 #gem 'factory_girl_rails' -- see bottom post https://github.com/timcharper/spork/issues/83
 #gem 'shoulda' (or 'remarkable')
-#gem 'rockstar'
 #gem 'guard-spork' #must be before cuc/rspec guard gems
 #gem 'rspec-instafail' # use with --fail-fast -- note: for some utterly strange reason rails can't see this (i.e. in plain irb 'require "rspec/instafail" returns true, while in rails console, returns nil, and when used with rspec it causes a stacktrace.. (and note that according to the docs, No require is used in this gemfile, rspec handles that...but rspec can't find it either..
 
