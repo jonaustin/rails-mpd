@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 3.1'
 gem 'bootstrap-sass', '~> 2.0.3'
 gem 'simple_form'
 gem 'rockstar'
+gem 'pg' # heroku doesn't use mysql
 
 group :development, :test do
   gem 'annotate'
@@ -38,7 +39,7 @@ group :development, :test do
   gem 'wirble'
   gem 'pry-rails'
 
-  gem 'thin'
+  #gem 'thin' # heroku doesn't like..
 end
 
 # Gems used only for assets and not required
