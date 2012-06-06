@@ -10,10 +10,10 @@ gem 'simple_form'
 gem 'rockstar'
 gem 'pg' # heroku doesn't use mysql
 gem 'thin'
+gem 'librmpd'
 
 group :development, :test do
   gem 'annotate'
-  gem 'librmpd'
 
   gem 'jquery-rails'
   gem 'haml-rails'
