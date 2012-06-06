@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
-gem 'mysql'
+#gem 'mysql'
 gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 3.1'
@@ -9,14 +9,13 @@ gem 'bootstrap-sass', '~> 2.0.3'
 gem 'simple_form'
 gem 'rockstar'
 gem 'pg' # heroku doesn't use mysql
-gem 'thin'
+#gem 'thin'
 gem 'librmpd'
+gem 'jquery-rails'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'annotate'
-
-  gem 'jquery-rails'
-  gem 'haml-rails'
 
   gem 'rspec-rails'
   gem 'cucumber-rails'
