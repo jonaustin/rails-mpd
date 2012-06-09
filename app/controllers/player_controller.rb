@@ -1,4 +1,13 @@
 class PlayerController < ApplicationController
+  #respond_to :js
+
+  # make all these into one method
+  def controls
+    case params[:control]
+    when 'play' 'foo'
+    end
+  end
+
   def play
     @player.play params['pos']
     respond_to do |format|
