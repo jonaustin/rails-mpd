@@ -1,0 +1,18 @@
+%tr.song{id: id}
+  %td.tracknum= track.track
+  %td.song_name
+    - if track.pos == @player.cur_song.pos
+      %a{name: 'current', id: 'current'}
+        %span#playlist_cur_song_name #{track.title}
+    - else
+      = link_to track.title, play_path(pos: track.pos), id: 'cur_playlist_track__'+track.pos, class: 'song_name controls', remote: true
+  %td.album_name= track.album
+  %td.artist_name= track.artist
+  %td.duration= track.time
+  %td
+    -# if song.pos.to_i != 0
+      = link_to image_tag("arrow_up.png"), listen_move_up_path(pos: song.pos), id: 'listen_move_up__'+ song.pos, class: 'listen_move_up move_up'
+  %td
+    -# if song.pos.to_i != (@cur_playlist.length - 1)
+      = link_to image_tag("arrow_down.png"), listen_move_down_path(pos: song.pos), id: 'listen_move_down__'+ song.pos, class ':listen_move_down move_down'
+  /%td= link_to image_tag("delete.png"), listen_remove_path(pos: song.pos), id: 'listen_remove__'+ song.pos, class: 'listen_remove'

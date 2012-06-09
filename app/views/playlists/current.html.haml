@@ -1,17 +1,17 @@
 %h1 Current Playlist
 
-%a{:href => "#current"} Currently Playing
+%a{href: "#current"} Currently Playing
 
 %h3#current_info_header Currently Playing
 %ul#current_info
-  = render(:partial => 'player/songinfo', |
+  = render(partial: 'player/songinfo', |
     locals: { cur_song: @player.cur_song |
     }) |
 
 =yield
 / must yield between partials?
 
-= render(:partial => 'player/controls', |
+= render(partial: 'player/controls', |
   locals: { cur_song:  @player.cur_song,  |
   playing:    @player.playing?,                 |
   stopped:    @player.stopped?,                 |
@@ -35,23 +35,6 @@
         / Down
       %th
         / Remove
-    - @cur_playlist.each do |song|
-      <tr class="song" #{@player.cur_song['pos'].to_i == song['pos'].to_i ? "id='nowplaying'" : ''}>
-      %td.tracknum= song.track
-      %td.song_name
-        - if song['pos'] == @player.cur_song['pos']
-          %a{:name => 'current', :id => 'current'}
-            %span#playlist_cur_song_name #{song.title}
-        - else
-          = link_to song.title, play_path(:pos => song['pos']), :id => 'cur_playlist_track__'+song['pos'], :class => 'song_name controls', :remote => true
-      %td.album_name= song.album
-      %td.artist_name= song.artist
-      %td.duration= song.time
-      %td
-        -# if song['pos'].to_i != 0
-          = link_to image_tag("arrow_up.png"), listen_move_up_path(:pos => song['pos']), :id => 'listen_move_up__'+ song['pos'], :class => 'listen_move_up move_up'
-      %td
-        -# if song['pos'].to_i != (@cur_playlist.length - 1)
-          = link_to image_tag("arrow_down.png"), listen_move_down_path(:pos => song['pos']), :id => 'listen_move_down__'+ song['pos'], :class => 'listen_move_down move_down'
-      /%td= link_to image_tag("delete.png"), listen_remove_path(:pos => song['pos']), :id => 'listen_remove__'+ song['pos'], :class => 'listen_remove'
-
+    - @cur_playlist.each do |track|
+      - id = @player.cur_song.pos.to_i == track.pos.to_i ? 'nowplaying' : ''
+      = render partial: 'tracks/track', locals: {track: track, id: id}
