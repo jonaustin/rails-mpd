@@ -1,5 +1,6 @@
 class PlayerController < ApplicationController
   respond_to :js
+  after_filter :set_cur_song
 
   # make all these into one method
   def controls
@@ -36,5 +37,11 @@ class PlayerController < ApplicationController
     @player.repeat = (@player.repeat? ? false : true)
   end
 
-  ### Playlist Actions
+
+  protected
+  
+  def set_cur_song
+    @cur_song = @player.cur_song
+  end
+
 end
