@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def get_player
     if PLAYER_BACKEND == 'MPD'
-      @player = MPDAbstract.new
+      @player ||= MPDAbstract.new
     end
   end
 
