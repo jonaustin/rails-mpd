@@ -14,28 +14,28 @@ gem 'librmpd'
 
 group :development, :test do
   gem 'annotate'
-
-  gem 'rspec-rails'
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
-  gem 'capybara'
-  gem 'spork-rails'
-  gem 'simplecov'
-
   gem 'debugger'
 
-  gem 'guard'
-  gem 'guard-cucumber'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-
-  gem 'rb-inotify', '>= 0.5.1'
-  gem 'libnotify'
   # console
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'wirble'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'guard'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-inotify', '>= 0.5.1'
+  gem 'libnotify'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'spork-rails'
+  gem 'simplecov'
 end
 
 # Gems used only for assets and not required

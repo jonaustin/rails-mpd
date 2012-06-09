@@ -1,12 +1,15 @@
 require 'rubygems'
 require 'spork'
+#uncomment the following line to use spork with the debugger
 require 'spork/ext/ruby-debug'
 
 Spork.prefork do
-  # Loading more in this block will cause your tests to run faster. However,
-  # if you change any configuration or code from libraries loaded here, you'll
-  # need to restart spork for it take effect.
   require 'cucumber/rails'
+
+  # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
+  # order to ease the transition to Capybara we set the default here. If you'd
+  # prefer to use XPath just remove this line and adjust any selectors in your
+  # steps to use the XPath syntax.
   Capybara.default_selector = :css
 
   # By default, any exception happening in your Rails application will bubble up
@@ -33,6 +36,26 @@ Spork.prefork do
   rescue NameError
     raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
   end
+
+  # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
+  # See the DatabaseCleaner documentation for details. Example:
+  #
+  #   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
+  #     # { :except => [:widgets] } may not do what you expect here
+  #     # as tCucumber::Rails::Database.javascript_strategy overrides
+  #     # this setting.
+  #     DatabaseCleaner.strategy = :truncation
+  #   end
+  #
+  #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
+  #     DatabaseCleaner.strategy = :transaction
+  #   end
+  #
+
+  # Possible values are :truncation and :transaction
+  # The :transaction strategy is faster, but might give you threading problems.
+  # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
+  Cucumber::Rails::Database.javascript_strategy = :truncation
 
 end
 
@@ -69,7 +92,4 @@ end
 #
 # These instructions should self-destruct in 10 seconds.  If they don't, feel
 # free to delete them.
-
-
-
 
