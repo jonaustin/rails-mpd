@@ -10,7 +10,7 @@ class PlayerController < ApplicationController
   end
 
   def play
-    @player.play params['pos']
+    @player.play params.pos
   end
 
 
@@ -39,7 +39,7 @@ class PlayerController < ApplicationController
 
 
   protected
-  
+
   def set_cur_song
     @cur_song = @player.cur_song
   end

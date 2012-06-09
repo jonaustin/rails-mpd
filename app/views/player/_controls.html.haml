@@ -2,7 +2,7 @@
 #controls
   %h2 Controls
   / Previous Button
-  - if cur_song['pos'].to_i > 0
+  - if cur_song.pos.to_i > 0
     %a#previous.controls{:href => "/previous", :data => {remote: 'true'}}
       =image_tag 'control_start_blue.png'
   - else
@@ -21,7 +21,7 @@
     %a#stop.controls{:href => "/stop", :data => {remote: 'true'}}
       =image_tag "control_stop_blue.png"
   / Next Button
-  - if cur_song['pos'].to_i < (playlist.length - 1)
+  - if cur_song.pos.to_i < (playlist.length - 1)
     %a#next.controls{:href => "/next", :data => {remote: 'true'}}
       =image_tag "control_end_blue.png"
   - else

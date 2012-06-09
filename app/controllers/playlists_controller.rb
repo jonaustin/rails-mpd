@@ -7,17 +7,17 @@ class PlaylistsController < ApplicationController
   end
 
   def move_up
-    pos = params['pos'].to_i
+    pos = params.pos.to_i
     @player.move pos, pos-1
   end
 
   def move_down
-    pos = params['pos'].to_i
+    pos = params.pos.to_i
     @player.move pos, pos+1
   end
 
   def remove
-    pos = params['pos'].to_i
+    pos = params.pos.to_i
     @player.delete pos
   end
 
