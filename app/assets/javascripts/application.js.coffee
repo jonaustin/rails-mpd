@@ -11,3 +11,6 @@
   $('#sync_mpd').bind('ajax:success', (evt, data, status, xhr) ->
     $('#info').html(xhr.responseText)
   )
+
+@foo = ->
+  alert 'foo'
