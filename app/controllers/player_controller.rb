@@ -31,7 +31,6 @@ class PlayerController < ApplicationController
 
   def stop
     @player.stop
-    @stopped = true
   end
 
 
