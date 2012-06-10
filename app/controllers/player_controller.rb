@@ -25,6 +25,7 @@ class PlayerController < ApplicationController
 
   def pause_play
     @player.pause_play
+    @action = (@player.playing? ? 'pause' : 'play')
   end
 
 

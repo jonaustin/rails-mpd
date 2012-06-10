@@ -8,11 +8,10 @@
   - else
     =image_tag 'control_start.png'
   / Play/Pause Button
-  - if playing
-    %a#pause.controls{:href => "/pause_play", :data => {remote: 'true'}}
+  %a#pause_play.controls{:href => "/pause_play", :data => {remote: 'true'}}
+    - if playing
       =image_tag 'control_pause_blue.png'
-  - else
-    %a#play.controls{:href => "/pause_play", :data => {remote: 'true'}}
+    - else
       =image_tag "control_play_blue.png"
   / Stop Button
   - if stopped
