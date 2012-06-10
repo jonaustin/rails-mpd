@@ -5,6 +5,7 @@
 
 @import "bootstrap";
 
-.controls:hover { text-decoration: none }
+a.controls:hover { text-decoration: none }
+a.controls:active, a.controls:focus { outline: none }
 
 
