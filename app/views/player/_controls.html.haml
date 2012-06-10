@@ -15,10 +15,10 @@
       =image_tag "control_play_blue.png"
   / Stop Button
   - if stopped
-    =image_tag "control_stop.png"
+    =image_tag "control_stop.png", id: 'stop_img'
   - else
     %a#stop.controls{:href => "/stop", :data => {remote: 'true'}}
-      =image_tag "control_stop_blue.png"
+      =image_tag "control_stop_blue.png", id: 'stop_img'
   / Next Button
   - if cur_song.pos.to_i < (playlist.length - 1)
     %a#next.controls{:href => "/next", :data => {remote: 'true'}}
