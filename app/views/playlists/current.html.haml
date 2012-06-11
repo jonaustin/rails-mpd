@@ -4,20 +4,12 @@
 
 %h3#current_info_header Currently Playing
 %ul#current_info
-  = render(partial: 'player/songinfo', |
-    locals: { cur_song: @player.cur_song |
-    }) |
+  = render(partial: 'player/songinfo', locals: { cur_song: @player.cur_song })
 
 =yield
 / must yield between partials?
 
-= render(partial: 'player/controls', |
-  locals: { cur_song:  @player.cur_song,  |
-  playing:    @player.playing?,                 |
-  stopped:    @player.stopped?,                 |
-  repeat:     @player.repeat?,                  |
-  playlist:   @player.playlist,                |
-  })                                       |
+= render(partial: 'player/controls')
 
 
 #current_playlist

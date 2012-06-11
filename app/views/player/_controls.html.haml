@@ -2,34 +2,32 @@
 #controls
   %h2 Controls
   / Previous Button
-  - if cur_song.pos.to_i > 0
+  - if @player.cur_song.pos.to_i > 0
     %a#prev.controls{:href => "/previous", :data => {remote: 'true'}}
       =image_tag 'control_start_blue.png', id: 'prev_img'
   - else
     =image_tag 'control_start.png', id: 'prev_img'
   / Play/Pause Button
   %a#pause_play.controls{:href => "/pause_play", :data => {remote: 'true'}}
-    - if playing
+    - if @player.playing?
       =image_tag 'control_pause_blue.png', id: 'pause_play_img'
     - else
       =image_tag "control_play_blue.png", id: 'pause_play_img'
   / Stop Button
-  - if stopped
-    -# FIXME: use js to create/remove a element
-    %a#stop.controls{:href => "/stop", :data => {remote: 'true'}}
-      =image_tag "control_stop.png", id: 'stop_img'
+  - if @player.stopped?
+    =image_tag "control_stop.png", id: 'stop_img'
   - else
     %a#stop.controls{:href => "/stop", :data => {remote: 'true'}}
       =image_tag "control_stop_blue.png", id: 'stop_img'
   / Next Button
-  - if cur_song.pos.to_i < (playlist.length - 1)
+  - if !@player.stopped? and @player.cur_song.pos.to_i < (@player.playlist.length - 1)
     %a#next.controls{:href => "/next", :data => {remote: 'true'}}
       =image_tag "control_end_blue.png", id: 'next_img'
   - else
     =image_tag "control_end.png"
   / Loop Button
   %a#repeat.controls{:href => "/repeat", :data => {remote: 'true'}}
-    - if repeat
+    - if @player.repeat?
       =image_tag "control_repeat_blue.png"
     - else
       =image_tag "control_repeat.png"

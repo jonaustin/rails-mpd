@@ -10,7 +10,7 @@ class PlayerController < ApplicationController
   end
 
   def play
-    @player.play params.pos
+    @player.play params['pos']
   end
 
 
