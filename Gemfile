@@ -35,6 +35,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'launchy' # save_and_open_page
   gem 'spork-rails'
   gem 'simplecov'
 end
