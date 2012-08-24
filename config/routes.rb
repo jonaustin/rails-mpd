@@ -1,4 +1,4 @@
-Stratum::Application.routes.draw do
+Nyx::Application.routes.draw do
   root                     :to => 'playlists#current'
   get '/playlists/current', :as => 'current_playlist'
   match '/current',        :to => 'playlists#current'

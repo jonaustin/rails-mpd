@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Stratum::Application.load_tasks
+Nyx::Application.load_tasks
